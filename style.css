@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Custom window border */
+body {
+    background: white;
+    font-family: Arial;
+    padding: 0;
+    border: 5px solid #7fb8ab;
+    margin: 4px;  /* Space for native resize grip */
+    -webkit-user-select: none;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+}
+/* Title bar */
+.titlebar {
+    font-family: 'Silkscreen';
+  height: 32px;
+  background: linear-gradient(90deg, #9fdfdb 0%, #7fb8ab 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  -webkit-app-region: drag;  /* Makes titlebar draggable */
+  position: relative;
+}
+
+.titlebar button {
+  font-family: 'Silkscreen';
+}
+
+.titlebar h1 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  -webkit-app-region: no-drag;  /* Title text not draggable */
+}
+
+/* Window controls */
+.window-controls {
+  position: absolute;
+  right: 12px;
+  display: flex;
+  gap: 4px;
+  -webkit-app-region: no-drag;
+}
+
+.control-btn {
+  width: 46px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.minimize { background: rgba(0, 0, 0, 0); transition: all 0.2s;}
+.minimize:hover { background: rgba(255,255,255,0.2) !important; color: white !important; transition: all 0.2s; }
+.maximize { background: rgba(0, 0, 0, 0); transition: all 0.2s;}
+.maximize:hover { background: rgba(255,255,255,0.2) !important; color: white !important; transition: all 0.2s; }
+.close { background: rgba(0, 0, 0, 0); transition: all 0.2s;}
+.close:hover { background: #d46a68 !important; color: white !important; transition: all 0.2s; }
+
+/* Main content */
+.content {
+  height: calc(100% - 32px);
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  overflow-y: auto;
+}
+
+/* Rest of your existing task styles stay the same */
+
+/* Resize handles for frameless window */

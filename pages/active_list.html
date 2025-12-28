@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustyTaskTracker</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="titlebar">
+    <h1>Trusty Task Tracker</h1>
+    <div class="window-controls">
+        <button class="control-btn minimize" onclick="window.electronAPI.minimize()">−</button>
+        <button class="control-btn maximize" onclick="window.electronAPI.maximize()">□</button>
+        <button class="control-btn close" onclick="window.electronAPI.close()">✕</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <a href="../index.html">Home</a>
+    <input type="text" id="taskInput" placeholder="Add a new task...">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+  </div>
+</body>
+</html>
