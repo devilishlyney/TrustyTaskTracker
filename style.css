@@ -7,11 +7,12 @@ html, body {
   padding: 0;
   height: 100%;
   overflow: hidden;
+  cursor: url('assets/default-cursor.png'), default;
 }
 
 /* Custom window border */
 body {
-    background: white;
+    background: linear-gradient(180deg, hsl(176, 50%, 85%) 0%, whitesmoke 100%);
     font-family: Arial;
     padding: 0;
     border: 5px solid #7fb8ab;
@@ -31,10 +32,12 @@ body {
   padding: 0 12px;
   -webkit-app-region: drag;  /* Makes titlebar draggable */
   position: relative;
+  cursor: url('assets/default-cursor.png'), default;
 }
 
 .titlebar button {
   font-family: 'Silkscreen';
+  cursor: url('assets/pointer-cursor.png'), default;
 }
 
 .titlebar h1 {
@@ -47,40 +50,68 @@ body {
 /* Window controls */
 .window-controls {
   position: absolute;
-  right: 12px;
+  right: 0;
   display: flex;
-  gap: 4px;
+  gap: 0;
   -webkit-app-region: no-drag;
+  cursor: url('assets/pointer-cursor.png'), default;
 }
 
 .control-btn {
-  width: 46px;
+  width: 32px;
   height: 32px;
   border: none;
   background: none;
-  cursor: pointer;
+  cursor: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
 }
 
-.minimize { background: rgba(0, 0, 0, 0); transition: all 0.2s;}
-.minimize:hover { background: rgba(255,255,255,0.2) !important; color: white !important; transition: all 0.2s; }
-.maximize { background: rgba(0, 0, 0, 0); transition: all 0.2s;}
-.maximize:hover { background: rgba(255,255,255,0.2) !important; color: white !important; transition: all 0.2s; }
-.close { background: rgba(0, 0, 0, 0); transition: all 0.2s;}
-.close:hover { background: #d46a68 !important; color: white !important; transition: all 0.2s; }
-
+.minimize { background: rgba(255, 255, 255, 0); border: solid 2px rgba(255, 255, 255, 0); transition: all 0.2s;}
+.minimize:hover { background: rgba(255,255,255,0.2) !important; color: white !important; transition: all 0.2s; border: solid 2px rgba(255, 255, 255, 0.5); }
+.maximize { background: rgba(255, 255, 255, 0); border: solid 2px rgba(255, 255, 255, 0); transition: all 0.2s;}
+.maximize:hover { background: rgba(255,255,255,0.2) !important; color: white !important; transition: all 0.2s; border: solid 2px rgba(255, 255, 255, 0.5); }
+.close { background: rgba(255, 255, 255, 0); border: solid 2px rgba(255, 255, 255, 0); transition: all 0.2s;}
+.close:hover { background: #d46a68 !important; color: white !important; transition: all 0.2s; border: solid 2px rgba(255, 255, 255, 0.5); }
 /* Main content */
 .content {
   height: calc(100% - 32px);
   padding: 20px;
-  max-width: 600px;
+  width: calc(100% - 32px);
   margin: auto;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Rest of your existing task styles stay the same */
+.content h2 {
+  text-align: center;
+  font-family: 'Jersey 25';
+  font-size: 64px;
+  width: 100%;
+  height: 50%;
+  text-shadow: 0 0 10px #7fb8ab;
+  color: white;
+}
 
-/* Resize handles for frameless window */
+.content a {
+  text-decoration: none;
+  color: white;
+  background: #d46a68;
+  padding: 12px 24px;
+  font-family: 'Silkscreen';
+  cursor: url('assets/pointer-cursor.png'), default;
+}
+
+.content a:hover {
+  background: #b94c4a;
+}
+
+#main-page-btns {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
