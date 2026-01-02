@@ -84,6 +84,7 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  gap: 40px;
 }
 
 .content h2 {
@@ -98,6 +99,7 @@ body {
 
 .content a {
   text-decoration: none;
+  text-align: center;
   color: white;
   background: #d46a68;
   padding: 12px 24px;
@@ -114,4 +116,23 @@ body {
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
+}
+
+.content ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.content ul li {
+  background: white;
+  padding: 12px 24px;
+  border: 2px solid #7fb8ab;
+  min-width: 150px;
+  text-align: center;
+  font-family: 'Silkscreen';
 }
