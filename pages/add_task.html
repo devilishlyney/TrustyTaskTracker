@@ -21,9 +21,13 @@
 
   <div class="content">
     <a href="../index.html">Home</a>
-    <input type="text" id="taskInput" placeholder="Add a new task...">
-    <button onclick="addTask()">Add Task</button>
+    <input type="text" id="taskInput" placeholder="Task title (up to 30 characters)" required maxlength="30">
+    <input type="text" id="descInput" placeholder="Extra details (up to 50 characters)" required maxlength="50">
+    <button onclick="addTask()" id="add_task">Add Task</button>
     
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  <script src="../renderer.js"></script>
 </body>
 </html>
